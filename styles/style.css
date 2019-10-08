@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    background-image: url("../img/photo.png");
+    background-size: cover;
+}
+
+h1{
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 4em;
+    text-decoration: underline; 
+    color: white;
+    text-align: center;
+    margin-top: 8%;
+}
+form, div{
+    text-align: center;
+    margin-top: 5%;
+}
+
+p{
+    font-size: 1.5em;
+    font-family: "Be Vietnam", sans-serif;
+    font-weight: 600;
+    font-style: italic;color: white;
+}
+
+form input[type="url"]{
+    outline: none;
+    height: 40px;
+    width: 500px;
+    border: 2px dashed black;
+}
+form input[type="submit"]{
+    outline: none;
+    height: 45px;
+    width: 60px;
+    border: 2px dashed black;
+}
+.shortUrl{
+    color: wheat;
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 1.5em;
+}
