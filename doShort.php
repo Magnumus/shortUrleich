@@ -15,12 +15,18 @@ $db_conn = mysqli_connect("localhost", "root", "", "shorturl") or die("No connec
         $check_if_we_had_one = mysqli_query($db_conn, "SELECT * FROM urls WHERE full_url = '$url'") or die("error");
         $check_result = mysqli_fetch_array($check_if_we_had_one);
         
-        if(mysqli_num_rows($check_if_we_had_one) > 0) echo $_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]."?code=".$check_result["code"];
+        if(mysqli_num_rows($check_if_we_had_one) > 0){
+            $new = $_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]."?code=".$check_result["code"];
+            $new .= "<input type='text' value='$new' id='hidden'><input onclick='myFunction()' class='btn' type='button' value='Copy!'/>";
+            echo $new;
+        }
         else{
         
-        mysqli_query($db_conn, "INSERT INTO URLs VALUES(null, '$url', '$code')")or die("dg");
+            mysqli_query($db_conn, "INSERT INTO URLs VALUES(null, '$url', '$code')")or die("dg");
+            $new = $_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]."?code=".$code;
+            $new .= "<input type='text' value='$new' id='hidden'><input onclick='myFunction()' class='btn' type='button' value='Copy!'/>";
         
-        echo $_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]."?code=".$code;
+            echo $new;
             }
     } else if(!empty($_GET["code"])){
             $code = $_GET["code"];

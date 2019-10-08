@@ -1,3 +1,13 @@
+<IfModule mod_rewrite.c>
+
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^.]+)$ $1.php [NC,L]
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+RewriteBase /
+
+RewriteRule ^about$ about.php
+RewriteRule ^services$ services.php
+
+</IfModule>

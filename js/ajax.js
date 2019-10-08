@@ -19,3 +19,13 @@ $(document).ready(function() {
 	});
 
 });
+function myFunction() {
+  var copyText = document.querySelector(".shortUrl");  
+  var range = document.createRange();  
+  range.selectNode(copyText);  
+  window.getSelection().addRange(range);  
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges(); 
+  alert("Copied the text: ");
+   
+}

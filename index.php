@@ -13,12 +13,20 @@
 <body>
     <h1>shortURLeich</h1>
     <form action="doShort.php" method="post">
-        <input type="url" name="url" placeholder="Enter your URl">
+        <input type="url" name="url" id="d" placeholder="Enter your URl">
         <input type="submit" name="submit" value="Short!">
     </form>
     <div>
     <p>Ваша новая ссылка:</p>
     <span class="shortUrl"></span>
     </div>
+    
+    <script>
+        function myFunction() { 
+            $("#hidden").select();
+            document.execCommand("copy");
+            alert("Ссылка успешно скопирована");
+}
+    </script>
 </body>
 </html>

@@ -35,15 +35,31 @@ form input[type="url"]{
     height: 40px;
     width: 500px;
     border: 2px dashed black;
+    font-weight: bolder;
 }
 form input[type="submit"]{
     outline: none;
     height: 45px;
     width: 60px;
     border: 2px dashed black;
+    font-weight: bolder;
 }
 .shortUrl{
     color: wheat;
     font-family: "Be Vietnam", sans-serif;
     font-size: 1.5em;
+}
+.btn{
+    outline: none;
+    height: 44px;
+    font-weight: bolder;
+    width: 44px;
+    border-radius: 8px;
+    font-family: "Be Vietnam", sans-serif;
+    margin-left: 3%;
+    border: 2px solid black;
+}
+#hidden{
+    opacity: 0;
+    width: 20px;
 }
