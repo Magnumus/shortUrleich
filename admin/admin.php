@@ -1,10 +1,12 @@
 <?php session_start();
+    require_once "../connect.php";
         if(isset($_POST["log"])){
             $login = htmlspecialchars($_POST["login"]);
             $pass = htmlspecialchars($_POST["password"]);
-            $cn = mysqli_connect("localhost", "root", "", "shorturl") or die("database error");
-            $admin_check = mysqli_query($cn,"SELECT password FROM admin WHERE login = '$login'") or die("query error");
-            $uc = mysqli_fetch_array($admin_check);
+            $query = $pdo->prepare("SELECT password FROM admin WHERE login = :login");
+            $query->execute(array('login'=>$login));
+            //$admin_check = mysqli_query($cn,"SELECT password FROM admin WHERE login = '$login'") or die("query error");
+            $uc = $query->fetch($pdfl);
             if($uc['password'] == $pass) {
                     $_SESSION["admin_is_here"] = true;
                     header("Location: admindex.php");

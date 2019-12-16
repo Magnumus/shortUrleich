@@ -20,13 +20,5 @@
     <p>Ваша новая ссылка:</p>
     <span class="shortUrl"></span>
     </div>
-    
-    <script>
-        function myFunction() { 
-            $("#hidden").select();
-            document.execCommand("copy");
-            alert("Ссылка успешно скопирована");
-}
-    </script>
 </body>
 </html>
