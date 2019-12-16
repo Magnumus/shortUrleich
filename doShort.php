@@ -45,8 +45,8 @@
             
             header("Location: $f_url");
             } else{
-                header("Location: index.php");
+                header("Location: index");
             }
-        } else header("Location: index.php");
+        } else header("Location: index");
 
 ?>

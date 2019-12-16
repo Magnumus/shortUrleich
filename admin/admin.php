@@ -9,7 +9,7 @@
             $uc = $query->fetch($pdfl);
             if($uc['password'] == $pass) {
                     $_SESSION["admin_is_here"] = true;
-                    header("Location: admindex.php");
+                    header("Location: admindex");
             }
             
         }  else{

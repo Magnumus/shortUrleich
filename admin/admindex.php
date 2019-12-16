@@ -2,7 +2,7 @@
 session_start();
 require_once "../connect.php";
 if(!isset($_SESSION["admin_is_here"])){
-    header("Location: admin.php");
+    header("Location: admin");
 } else{
     //$query = mysqli_query($cn,"SELECT * FROM urls") or die("query error");
     $query = $pdo->query("SELECT * FROM urls");
@@ -39,7 +39,7 @@ if(!isset($_SESSION["admin_is_here"])){
                     $count = 0;
     while($result = $all->fetch($pdfl)){
         $f_url = $result["full_url"];
-        $new_url = $_SERVER["HTTP_HOST"]."/doShort.php?code=".$result["code"];
+        $new_url = $_SERVER["HTTP_HOST"]."/doShort?code=".$result["code"];
         $id = $result["id"];
         echo "  <td>".++$count."</td>
                 <td>$f_url</td>
